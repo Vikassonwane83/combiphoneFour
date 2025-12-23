@@ -60,8 +60,8 @@ all: main-build
 main-build: combiphone4.elf secondary-outputs
 
 # Tool invocations
-combiphone4.elf combiphone4.map: $(OBJS) $(USER_OBJS) /home/vikas/freelance_projects/combiphone4/STM32F030K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "combiphone4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"/home/vikas/freelance_projects/combiphone4/STM32F030K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="combiphone4.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+combiphone4.elf combiphone4.map: $(OBJS) $(USER_OBJS) F:\Work\combiphone4\combiphoneFour\STM32F030K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "combiphone4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"F:\Work\combiphone4\combiphoneFour\STM32F030K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="combiphone4.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
